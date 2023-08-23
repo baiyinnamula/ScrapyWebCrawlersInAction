@@ -24,7 +24,7 @@ class QuoteSpider(CrawlSpider):
             yield {
                 'content': quote.css('.text::text').extract_first(),
                 'author': quote.css('.author::text').extract_first(),
-                'tags': quote.css('.tag::text').extract_first(),
+                'tags': quote.css('.tag::text').extract(),
             }
 
         # 提取内容页数据方法
